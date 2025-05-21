@@ -31,7 +31,7 @@ INDEX_PATH = os.environ.get("RETRIEVER_INDEX_PATH", "index_merged")
 # === Request schema ===
 class SearchRequest(BaseModel):
     query: str
-    statement_id: int | None = None
+    statement_id: int|str = "merged"
     k: int = 5
     type: Literal["dense", "hybrid"] = "hybrid"
 
@@ -40,7 +40,6 @@ class SearchRequest(BaseModel):
 segment_retriever: HybridSearch
 document_retriever: GoogleSearch
 limiter = AsyncLimiter(5, 1)
-
 
 @app.on_event("startup")
 async def startup_event():
