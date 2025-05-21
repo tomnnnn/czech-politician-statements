@@ -27,3 +27,4 @@ mlflow
 pytest
 ufal.morphodita
 jsoncomment
+fake-http-header
