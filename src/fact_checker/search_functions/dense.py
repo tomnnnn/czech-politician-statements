@@ -119,6 +119,9 @@ class DenseSearch(SearchFunction):
         corpus = self.indices[key]["corpus"]
 
         _, ids = index.search(query_embeddings, k=k)
+
+        print("ids", ids)
+        print("corpus", len(corpus))
         results = [
             [corpus[int(i)] for i in ids[j] if i != -1] for j in range(len(ids))
         ]
