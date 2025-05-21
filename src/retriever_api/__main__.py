@@ -25,7 +25,7 @@ DATASET_PATH = os.environ.get(
     "RETRIEVVER_DATASET_PATH",
     os.path.join(os.environ.get("SCRATCHDIR", "./"), "dataset_demagog.sqlite"),
 )
-INDEX_PATH = os.environ.get("RETRIEVVER_INDEX_PATH", "index_merged")
+INDEX_PATH = os.environ.get("RETRIEVER_INDEX_PATH", "index_merged")
 
 
 # === Request schema ===
