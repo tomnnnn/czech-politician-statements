@@ -1,0 +1,9 @@
+datasets/
+*.db
+*.db-journal
+mlruns/
+results
+node_modules/
+__pycache__/
+src/fact_checker/link_entities/lemmatize/czech-morfflex2.0-pdtc1.0-220710
+._*

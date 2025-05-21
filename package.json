@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@extractus/article-extractor": "^8.0.17",
+    "better-sqlite3": "^11.8.1",
+    "cli-progress": "^3.12.0",
+    "header-generator": "^2.1.66",
+    "https-proxy-agent": "^7.0.6",
+    "limiter": "^3.0.0",
+    "p-limit": "^6.2.0",
+    "sanitize-html": "^2.14.0",
+    "user-agent": "^1.0.4",
+    "user-agents": "^1.1.523"
+  },
+  "type": "module"
+}

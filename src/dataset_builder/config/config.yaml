@@ -1,0 +1,22 @@
+default:
+  # general options
+  OutputDir: datasets/dataset
+  FetchConcurrency: 3 # rate limiting
+  FetchDelay: 1 # rate limiting
+
+  # Demagog scraping options
+  UseExistingStatements: false # useful to scrape articles for existing statements in dataset
+  FromYear: null
+  ToYear: null
+  FirstNPages: null # how many pages to retrieve for each year
+
+  # Evidence retrieval options
+  UseExistingEvidenceLinks: false 
+  EvidenceLinksPath: "evidence_links.json" # only if UseExistingEvidenceLinks = true
+  ScrapeArticles: False
+  EvidenceNum: 2
+  SearchDelay: 1 # rate limiting
+  SearchesPerDelay: 3  # rate limiting
+  EvidenceRetriever: demagog # google, bing, criteria, demagog
+  EvidenceAPIKey: $SEARCH_API_KEY # can use env variables
+  SegmentArticles: False
