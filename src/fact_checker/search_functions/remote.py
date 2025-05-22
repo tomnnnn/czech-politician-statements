@@ -45,7 +45,7 @@ class RemoteSearchFunction(SearchFunction):
             list[Segment]: A list of segments matching the query.
         """
 
-        response = requests.post(f"{self.search_endpoint}", json={"query": query, "k": k, "statement_id": int(key)})
+        response = requests.post(f"{self.search_endpoint}", json={"query": query, "k": k, "statement_id": key})
         if response.status_code != 200:
             logger.error("Failed to search the index: " + response.text)
             return []

@@ -23,13 +23,13 @@ class HybridSearch():
         self.sparse_retriever = SparseSearch()
         self.reranker = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=True)
 
-        dataset = Dataset(dataset_path)
-        segments = dataset.get_segments_with_statement_ids()
+        self.dataset = Dataset(dataset_path)
+        segments = self.dataset.get_segments_with_statement_ids()
         self.segment_map = defaultdict(list)
 
         if merged:
             # Load all segments into a single index
-            self.segment_map["merged"] = dataset.get_segments()
+            self.segment_map["merged"] = self.dataset.get_segments()
             self.statement_ids = ["merged"] # single index for all segments
         else:
             # Load segments with their statement IDs

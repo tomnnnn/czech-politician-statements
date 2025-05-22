@@ -128,11 +128,11 @@ class HopRetriever(dspy.Module):
                     {
                         "query": query,
                         "k": self.num_docs,
-                        "key": statement.id,
+                        "key": "merged",
                     }
                 )
                 new_segments = self.doc_retriever.search(
-                    query=query, k=self.num_docs, key=statement.id
+                    query=query, k=self.num_docs, key="merged"
                 )
                 # convert segments to dict
                 new_segments = self._seg_to_dict(new_segments)

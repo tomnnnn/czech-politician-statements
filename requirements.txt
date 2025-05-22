@@ -21,7 +21,6 @@ faiss-cpu
 sqlalchemy
 FlagEmbedding
 bm25s
-faiss
 simplemma
 mlflow
 pytest

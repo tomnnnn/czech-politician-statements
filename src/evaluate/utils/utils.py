@@ -25,7 +25,8 @@ import logging
 loggers = [
     "LiteLLM Proxy",
     "LiteLLM Router",
-    "LiteLLM"
+    "LiteLLM",
+    "httpx"
 ]
 
 for logger_name in loggers:
@@ -74,6 +75,7 @@ def setup_evaluation(
     """
 
     samples_list = []
+    dataset_path = os.environ.get("DATASET_PATH", dataset_path)
 
     for sample_type, sample_portion in zip(sample_types, sample_portions):
         statements = sample_statements(
