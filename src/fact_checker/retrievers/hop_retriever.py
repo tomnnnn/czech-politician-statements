@@ -128,7 +128,7 @@ class HopRetriever(dspy.Module):
                     {
                         "query": query,
                         "k": self.num_docs,
-                        "key": statement.id,
+                        "key": "merged",
                     }
                 )
                 new_segments = self.doc_retriever.search(
