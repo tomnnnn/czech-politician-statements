@@ -11,6 +11,7 @@ from typing import Any, Literal
 
 import dspy
 import mlflow
+from mlflow import dspy as mlflow_dspy
 import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report
@@ -115,9 +116,9 @@ def setup_dspy(
 
 
 def setup_mlflow(experiment_name: str = "thesis"):
-    mlflow.set_tracking_uri("sqlite:///thesis_runs_test.db")
+    mlflow.set_tracking_uri("sqlite:///thesis-evals.db")
     mlflow.set_experiment(experiment_name)
-    mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
+    mlflow_dspy.autolog()
 
 
 def sample_statements(
